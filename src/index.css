@@ -91,7 +91,11 @@
   right: 7% !important;
   z-index: 1;
 }
-
+/* 
 svg {
   stroke: #4a8459;
+} */
+
+.div1.show {
+  transition: all 0.2s ease-in-out;
 }

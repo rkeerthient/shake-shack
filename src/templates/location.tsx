@@ -44,6 +44,12 @@ import "slick-carousel/slick/slick-theme.css";
 import HoursText from "../components/HoursText";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useState } from "react";
+import { SearchBar } from "@yext/search-ui-react";
+import {
+  provideHeadless,
+  SearchHeadlessProvider,
+} from "@yext/search-headless-react";
+import searchConfig from "../config/searchConfig";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -159,119 +165,118 @@ const Location: Template<TemplateRenderProps> = ({
     c_featuredMenu,
     c_relatedFAQs,
   } = document;
-  console.log(JSON.stringify(document));
 
-  const onSearch = (searchEventData: {
-    verticalKey?: string;
-    query?: string;
-  }) => {
-    const { query } = searchEventData;
-    console.log(query);
-  };
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
+  const searcher = provideHeadless({
+    ...searchConfig,
+    verticalKey: "restaurants",
+  });
   return (
     <>
-      <Header />
-      <Banner name={name} address={address} openTime={openTime}></Banner>
+      <SearchHeadlessProvider searcher={searcher}>
+        <Header />
+        <Banner name={name} address={address} openTime={openTime}></Banner>
 
-      <div className="centered-container">
-        <div className="section">
-          <h1 className="text-2xl font-bold uppercase text-center">
-            Shake Shack
-          </h1>
-          <div className="grid grid-cols-2 mx-auto ">
-            <div className="my-auto mx-auto">
-              <Contact address={address} phone={mainPhone}></Contact>
-              {services && <List list={services}></List>}
-            </div>
-            <div className="pt-5 ">
-              <div className="flex leading-loose items-center text-xl">
-                <FiPhone />
-                {mainPhone && (
-                  <span className="ml-2">
-                    {mainPhone
-                      .replace("+1", "")
-                      .replace(/\D+/g, "")
-                      .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
-                  </span>
-                )}
+        <div className="centered-container">
+          <div className="section">
+            <h1 className="text-2xl font-bold uppercase text-center">
+              Shake Shack
+            </h1>
+            <div className="grid grid-cols-2 mx-auto ">
+              <div className="my-auto mx-auto">
+                <Contact address={address} phone={mainPhone}></Contact>
+                {services && <List list={services}></List>}
               </div>
-              {hours && (
-                <div className="flex w-full leading-loose items-baseline text-xl">
-                  <FiClock />
-                  <span className="ml-2">
-                    <HoursText document={document} />
-                  </span>
-                  {!isActive && (
-                    <BsChevronDown
-                      className="ml-4"
-                      onClick={(e) => setIsActive(!isActive)}
-                    />
-                  )}
-                  {isActive && (
-                    <BsChevronUp
-                      className="ml-4"
-                      onClick={(e) => setIsActive(!isActive)}
-                    />
+              <div className="pt-5 ">
+                <div className="flex leading-loose items-center text-xl">
+                  <FiPhone />
+                  {mainPhone && (
+                    <span className="ml-2">
+                      {mainPhone
+                        .replace("+1", "")
+                        .replace(/\D+/g, "")
+                        .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
+                    </span>
                   )}
                 </div>
-              )}
-              <span style={{ transitionDuration: ".5s" }}>
-                {isActive && hours && <Hours title={""} hours={hours} />}
-              </span>
+                {hours && (
+                  <div className="flex w-full leading-loose items-baseline text-xl">
+                    <FiClock />
+                    <span className="ml-2">
+                      <HoursText document={document} />
+                    </span>
+                    {!isActive && (
+                      <BsChevronDown
+                        className="ml-4"
+                        onClick={(e) => setIsActive(!isActive)}
+                      />
+                    )}
+                    {isActive && (
+                      <BsChevronUp
+                        className="ml-4"
+                        onClick={(e) => setIsActive(!isActive)}
+                      />
+                    )}
+                  </div>
+                )}
+                <span style={{ transitionDuration: ".5s" }}>
+                  {isActive && hours && <Hours title={""} hours={hours} />}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="mx-auto p-4">
-        {c_featuredMenu && <Carousel data={c_featuredMenu}></Carousel>}
-      </div>
-      <div className="p-4 w-2/4 mx-auto text-center mb-10">
-        <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
-          FAQs
-        </h1>
-        {c_relatedFAQs && (
-          <Accordion allowZeroExpanded>
-            {c_relatedFAQs.map((item: any, index: number) => (
-              <AccordionItem
-                key={index}
-                className="faqAccordion my-4 py-4 border-b  border-black text-left"
-              >
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span className="font-bold">{item.question}</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>{item.answer}</AccordionItemPanel>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        )}
-      </div>
-      <div className="pt-5 relative">
-        {geocodedCoordinate && (
-          <StaticMap
-            latitude={geocodedCoordinate.latitude}
-            longitude={geocodedCoordinate.longitude}
-          ></StaticMap>
-        )}
-        <div className=" w-4/6 mx-auto text-center mt-10 p-10 absolute top-full left-1/2 -translate-x-2/4 -translate-y-2/4 bg-white">
-          <div className="text-2xl font-bold">About us</div>
-          <div className="mt-4 text-left text-gray-500	leading-8 ">
-            When Shake Shack started as a hot dog cart in New York City's
-            Madison Square Park, our mission was simple: raise funds for a
-            public art project. As we grew into a global business, our mission
-            to Stand For Something Good expanded to include taking care of our
-            team, sourcing premium ingredients from partners with the same
-            dedication to quality, designing our Shacks responsibly, supporting
-            our communities through donations, events, and volunteering—and much
-            more. Doing good is in our roots, a part of our DNA since day one.
-            20 years later, we're still continuing to expand and evolve our
-            mission to Stand For Something Good in everything we do.
+        <div className="mx-auto p-4">
+          {c_featuredMenu && <Carousel data={c_featuredMenu}></Carousel>}
+        </div>
+        <div className="p-4 w-2/4 mx-auto text-center mb-10">
+          <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
+            FAQs
+          </h1>
+          {c_relatedFAQs && (
+            <Accordion allowZeroExpanded>
+              {c_relatedFAQs.map((item: any, index: number) => (
+                <AccordionItem
+                  key={index}
+                  className="faqAccordion my-4 py-4 border-b  border-black text-left"
+                >
+                  <AccordionItemHeading>
+                    <AccordionItemButton>
+                      <span className="font-bold">{item.question}</span>
+                    </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel>{item.answer}</AccordionItemPanel>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          )}
+        </div>
+        <div className="pt-5 relative">
+          {geocodedCoordinate && (
+            <StaticMap
+              latitude={geocodedCoordinate.latitude}
+              longitude={geocodedCoordinate.longitude}
+            ></StaticMap>
+          )}
+          <div className=" w-4/6 mx-auto text-center mt-10 p-10 absolute top-full left-1/2 -translate-x-2/4 -translate-y-2/4 bg-white">
+            <div className="text-2xl font-bold">About us</div>
+            <div className="mt-4 text-left text-gray-500	leading-8 ">
+              When Shake Shack started as a hot dog cart in New York City's
+              Madison Square Park, our mission was simple: raise funds for a
+              public art project. As we grew into a global business, our mission
+              to Stand For Something Good expanded to include taking care of our
+              team, sourcing premium ingredients from partners with the same
+              dedication to quality, designing our Shacks responsibly,
+              supporting our communities through donations, events, and
+              volunteering—and much more. Doing good is in our roots, a part of
+              our DNA since day one. 20 years later, we're still continuing to
+              expand and evolve our mission to Stand For Something Good in
+              everything we do.
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
+      </SearchHeadlessProvider>
     </>
   );
 };

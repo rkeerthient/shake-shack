@@ -1,6 +1,8 @@
 import * as React from "react";
 import Cta from "../components/cta";
 import { BsSearch } from "react-icons/bs";
+import { SearchBar } from "@yext/search-ui-react";
+import { useState } from "react";
 type Link = {
   label: string;
   url: string;
@@ -25,23 +27,43 @@ const Header = () => {
       </a>
     </div>
   ));
-
+  const onSearch = (searchEventData: {
+    verticalKey?: string;
+    query?: string;
+  }) => {
+    const { query } = searchEventData;
+    if (query)
+      window.open(
+        "https://answers_shakeshackdemo_com.sbx.yextpages.net/?query=" + query,
+        "_blank"
+      );
+  };
+  const [isActive, setIsActive] = useState(false);
   return (
     <>
       <div className="w-full">
         <nav className="relative">
           <img src="https://i.imgur.com/cJtnz2b.png"></img>
-          <BsSearch className="absolute  top-2/4 " style={{ right: "5%" }} />
-          {/* <div className="text-2xl font-semibold">Turtlehead Tacos</div>
-          <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
-          <div className="space-x-5">
-            <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
-            <Cta
-              buttonText="Order Delivery"
-              url="#"
-              style="secondary-cta"
-            ></Cta>
-          </div> */}
+          {!isActive && (
+            <BsSearch
+              className="absolute bottom-2/4 "
+              style={{ right: "5%" }}
+              onClick={(e) => setIsActive(!isActive)}
+            />
+          )}
+
+          {isActive && (
+            <div className="div1 show">
+              <SearchBar
+                onSearch={onSearch}
+                customCssClasses={{
+                  searchBarContainer:
+                    "w-1/6 absolute bottom-0 left-3/4 custClass",
+                }}
+                hideRecentSearches={true}
+              />
+            </div>
+          )}
         </nav>
       </div>
     </>
