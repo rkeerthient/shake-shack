@@ -187,12 +187,14 @@ const Location: Template<TemplateRenderProps> = ({
             <div className="pt-5 ">
               <div className="flex leading-loose items-center text-xl">
                 <FiPhone />
-                <span className="ml-2">
-                  {mainPhone
-                    .replace("+1", "")
-                    .replace(/\D+/g, "")
-                    .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
-                </span>
+                {mainPhone && (
+                  <span className="ml-2">
+                    {mainPhone
+                      .replace("+1", "")
+                      .replace(/\D+/g, "")
+                      .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
+                  </span>
+                )}
               </div>
               {/* <div className="flex w-full leading-loose items-baseline text-xl">
                 <FiClock />
