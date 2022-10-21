@@ -182,7 +182,7 @@ const Location: Template<TemplateRenderProps> = ({
               Shake Shack
             </h1>
             <div className="grid grid-cols-2 mx-auto ">
-              <div className="my-auto mx-auto">
+              <div className=" mx-auto">
                 <Contact address={address} phone={mainPhone}></Contact>
               </div>
               <div className="pt-5 mx-auto">
@@ -226,12 +226,7 @@ const Location: Template<TemplateRenderProps> = ({
                     )}
                   </div>
                 )}
-                <span
-                  className={`${isActive ? "visible" : "invisible"}`}
-                  style={{ transitionDuration: ".5s" }}
-                >
-                  {hours && <Hours title={""} hours={hours} />}
-                </span>
+                {isActive && hours && <Hours title={""} hours={hours} />}
               </div>
             </div>
           </div>
