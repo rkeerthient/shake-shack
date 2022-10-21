@@ -39,8 +39,6 @@ const Banner = (props: Banner) => {
           <div className="text-4xl  ">{name?.split(",")[0]}</div>
           <div className="mt-2	text-xl	">
             {address?.city}, {address?.region}
-            {/* Put your tastebuds to the test with our new and limited-time Hot
-            Ones <sup>TM</sup> Bacon Burger + Chicken. */}
           </div>
           <div className="mt-10   flex justify-between">
             <Cta

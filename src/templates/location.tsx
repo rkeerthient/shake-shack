@@ -168,7 +168,7 @@ const Location: Template<TemplateRenderProps> = ({
     const { query } = searchEventData;
     console.log(query);
   };
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   return (
     <>
       <Header />
@@ -194,7 +194,7 @@ const Location: Template<TemplateRenderProps> = ({
                     .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
                 </span>
               </div>
-              <div className="flex w-full leading-loose items-baseline text-xl">
+              {/* <div className="flex w-full leading-loose items-baseline text-xl">
                 <FiClock />
                 <span className="ml-2">
                   <HoursText document={document} />
@@ -211,7 +211,7 @@ const Location: Template<TemplateRenderProps> = ({
                     onClick={(e) => setIsActive(!isActive)}
                   />
                 )}
-              </div>
+              </div> */}
               <span style={{ transitionDuration: ".5s" }}>
                 {isActive && hours && <Hours title={""} hours={hours} />}
               </span>
