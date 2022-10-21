@@ -327,7 +327,7 @@ const Location: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
-        <div className="pt-56 mb-4 ">
+        <div className="pt-64 mb-4 ">
           <div className="w-3/4 mx-auto">
             <h1 className="text-2xl font-bold text-green-600 uppercase text-center mb-4">
               Current Promotions
