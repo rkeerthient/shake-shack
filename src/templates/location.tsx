@@ -196,24 +196,26 @@ const Location: Template<TemplateRenderProps> = ({
                   </span>
                 )}
               </div>
-              {/* <div className="flex w-full leading-loose items-baseline text-xl">
-                <FiClock />
-                <span className="ml-2">
-                  <HoursText document={document} />
-                </span>
-                {!isActive && (
-                  <BsChevronDown
-                    className="ml-4"
-                    onClick={(e) => setIsActive(!isActive)}
-                  />
-                )}
-                {isActive && (
-                  <BsChevronUp
-                    className="ml-4"
-                    onClick={(e) => setIsActive(!isActive)}
-                  />
-                )}
-              </div> */}
+              {hours && (
+                <div className="flex w-full leading-loose items-baseline text-xl">
+                  <FiClock />
+                  <span className="ml-2">
+                    <HoursText document={document} />
+                  </span>
+                  {!isActive && (
+                    <BsChevronDown
+                      className="ml-4"
+                      onClick={(e) => setIsActive(!isActive)}
+                    />
+                  )}
+                  {isActive && (
+                    <BsChevronUp
+                      className="ml-4"
+                      onClick={(e) => setIsActive(!isActive)}
+                    />
+                  )}
+                </div>
+              )}
               <span style={{ transitionDuration: ".5s" }}>
                 {isActive && hours && <Hours title={""} hours={hours} />}
               </span>
