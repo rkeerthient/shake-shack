@@ -358,11 +358,16 @@ const Location: Template<TemplateRenderProps> = ({
                   <h1 className="text-xl font-bold">
                     GRAB ONE SHAKE, GET ONE FREE
                   </h1>
-                  <p className="mt-4">
+                  <p className="mt-4 mb-4">
                     From 8PM-close, score a second shake for free when you order
                     for pick-up online or on our app with code: SHAKENIGHT til
                     11/30.
                   </p>
+                  <Cta
+                    buttonText="Order now"
+                    style="primary-cta "
+                    url={""}
+                  ></Cta>
                 </div>
               </div>
               <div
@@ -387,10 +392,15 @@ const Location: Template<TemplateRenderProps> = ({
                   <h1 className="text-xl font-bold">
                     FRESHLY PICKED FALL FLAVORS
                   </h1>
-                  <p className="mt-4">
+                  <p className="mt-4 mb-4">
                     Crisp sips for fall in real fruit flavors: Yuzu Orange
                     Cider, Harvest Berry Lemonade, and Concord Grape Punch.
-                  </p>
+                  </p> 
+                  <Cta
+                    buttonText="Order now"
+                    style="primary-cta "
+                    url={""}
+                  ></Cta>
                 </div>
               </div>
             </div>
