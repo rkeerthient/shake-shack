@@ -60,6 +60,7 @@ const Header = () => {
                   searchBarContainer:
                     "w-1/6 absolute bottom-0 left-3/4 custClass",
                 }}
+                placeholder="Search"
                 hideRecentSearches={true}
               />
             </div>
