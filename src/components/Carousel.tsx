@@ -8,7 +8,7 @@ import { Markdown } from "react-showdown";
 const Carousel = (props: any) => {
   const { data } = props;
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
