@@ -1,4 +1,5 @@
 import * as React from "react";
+import Cta from "./cta";
 
 export type Address = {
   line1: string;
@@ -32,13 +33,31 @@ const Banner = (props: Banner) => {
 
   return (
     <>
-      <div className="bg-red-900 text-5xl font-bold text-white p-10 flex items-center justify-center flex-row space-x-20 w-full">
-        <div className="flex-col space-y-10 text-center">
-          <div>{name}</div>
-          <div>{renderPrettyAddress(address)}</div>
+      <div className="hero">
+        <img src="https://i.imgur.com/RlOXZV3.png" />
+        <div className="uppercase p-10 w-auto absolute -translate-y-2/4 border left-28	top-1/2 text-white   opacity-80	color-white font-bold bg-black">
+          <div className="text-4xl  ">{name?.split(",")[0]}</div>
+          <div className="mt-2	text-xl	">
+            {address?.city}, {address?.region}
+            {/* Put your tastebuds to the test with our new and limited-time Hot
+            Ones <sup>TM</sup> Bacon Burger + Chicken. */}
+          </div>
+          <div className="mt-10   flex justify-between">
+            <Cta
+              buttonText="Get Directions"
+              url="http://google.com"
+              style="primary-cta"
+            />
+            <Cta
+              buttonText="Get Directions"
+              url="http://google.com"
+              style="primary-cta"
+            />
+          </div>
         </div>
-        {children}
       </div>
+
+      {children}
     </>
   );
 };

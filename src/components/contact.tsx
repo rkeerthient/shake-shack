@@ -7,16 +7,19 @@ const Contact = (props: any) => {
 
   return (
     <>
-      <div className="grid gap-y-5">
-        <div className="text-xl font-semibold">Contact</div>
-        <div className="grid gap-y-3">
-          <Address address={address} />
+      <div className="grid  ">
+        <div className="grid ">
+          <div>{address.line1}</div>
+          {address.line2 && <div>{address.line2}</div>}
           <div>
-            <a href="#">{phone}</a>
+            {address.city}, {address.region} {address.postalCode}
           </div>
         </div>
-        <div className="w-30">
-          <Cta buttonText="Order Online" url="#" style="primary-cta"></Cta>
+        <div className="mt-10 text-xl uppercase text-green-600 underline">
+          <a>Get Directions</a>
+        </div>
+        <div className="w-30 mt-10">
+          <Cta buttonText="Order Online" url="#" style="secondary-cta"></Cta>
         </div>
       </div>
     </>
