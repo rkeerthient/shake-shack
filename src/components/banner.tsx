@@ -49,7 +49,7 @@ const Banner = (props: Banner) => {
               style="primary-cta"
             />
             <Cta
-              buttonText="Get Directions"
+              buttonText="Order now"
               url="http://google.com"
               style="primary-cta"
             />

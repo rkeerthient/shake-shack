@@ -41,7 +41,9 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import HoursText from "../components/HoursText";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { useState } from "react";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -166,7 +168,7 @@ const Location: Template<TemplateRenderProps> = ({
     const { query } = searchEventData;
     console.log(query);
   };
-
+  const [isActive, setIsActive] = useState(false);
   return (
     <>
       <Header />
@@ -192,12 +194,27 @@ const Location: Template<TemplateRenderProps> = ({
                     .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
                 </span>
               </div>
-              <div className="flex leading-loose items-center text-xl">
+              <div className="flex w-full leading-loose items-baseline text-xl">
                 <FiClock />
-                <span className="ml-2">Today is open</span>
+                <span className="ml-2">
+                  <HoursText document={document} />
+                </span>
+                {!isActive && (
+                  <BsChevronDown
+                    className="ml-4"
+                    onClick={(e) => setIsActive(!isActive)}
+                  />
+                )}
+                {isActive && (
+                  <BsChevronUp
+                    className="ml-4"
+                    onClick={(e) => setIsActive(!isActive)}
+                  />
+                )}
               </div>
-
-              {hours && <Hours title={""} hours={hours} />}
+              <span style={{ transitionDuration: ".5s" }}>
+                {isActive && hours && <Hours title={""} hours={hours} />}
+              </span>
             </div>
           </div>
         </div>

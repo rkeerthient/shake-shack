@@ -142,7 +142,7 @@ const Hours = (props: Hours) => {
   return (
     <>
       <div className="text-xl font-semibold mb-4">{title}</div>
-      <table className="ml-8">
+      <table className="ml-16">
         <thead className="sr-only">
           <tr>
             <th>Day of the Week</th>
