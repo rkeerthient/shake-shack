@@ -197,9 +197,9 @@ const Location: Template<TemplateRenderProps> = ({
                     </span>
                   )}
                 </div>
-                <div className="flex mt-4">
+                <div className="flex mt-4 text-xl">
                   <span className="font-bold ">Services:</span>
-                  <ul className="ml-8 flex">
+                  <ul className=" ml-2 flex services">
                     {services.map((item) => (
                       <li>{item}</li>
                     ))}
@@ -263,71 +263,7 @@ const Location: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
-        <div
-          className="w-3/4 mx-auto flex p-4 justify-evenly"
-          style={{ background: "#e7efdf" }}
-        >
-          <div className="my-auto w-1/2 ">
-            <h1 className="text-2xl font-bold text-green-600 uppercase ">
-              NEVER WAIT IN LINE AGAIN
-            </h1>
-            <div className="mt-4 text-xl">
-              Only on the Shack App: exclusive offers + treats, contactless
-              payment, curbside pick-up, delivery + way more.
-            </div>
-            <div className="flex w-3/4 mx-auto mt-8 gap-4">
-              <img
-                src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png"
-                alt=""
-              />
-              <img
-                src="https://lh3.googleusercontent.com/q1k2l5CwMV31JdDXcpN4Ey7O43PxnjAuZBTmcHEwQxVuv_2wCE2gAAQMWxwNUC2FYEOnYgFPOpw6kmHJWuEGeIBLTj9CuxcOEeU8UXyzWJq4NJM3lg=s0"
-                alt=""
-              />
-            </div>
-          </div>
-          <div>
-            <img
-              src="https://shakeshack.com/sites/default/files/Shake-Shake_App_540.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="mb-16 ">
-          <div className="pt-5 relative">
-            {geocodedCoordinate && (
-              <StaticMap
-                latitude={geocodedCoordinate.latitude}
-                longitude={geocodedCoordinate.longitude}
-              ></StaticMap>
-            )}
-            <div className="w-4/6 mx-auto text-center mt-10 p-10 absolute top-full left-1/2 -translate-x-2/4 -translate-y-2/4 bg-white">
-              <div className="text-2xl font-bold text-green-600">About us</div>
-              <div className="flex gap-4 mt-8">
-                <div className="mt-4 text-left text-gray-500 leading-8 w-1/2">
-                  When Shake Shack started as a hot dog cart in New York City's
-                  Madison Square Park, our mission was simple: raise funds for a
-                  public art project. As we grew into a global business, our
-                  mission to Stand For Something Good expanded to include taking
-                  care of our team, sourcing premium ingredients from partners
-                  with the same dedication to quality, designing our Shacks
-                  responsibly, supporting our communities through donations,
-                  events, and volunteering—and much more. Doing good is in our
-                  roots, a part of our DNA since day one. 20 years later, we're
-                  still continuing to expand and evolve our mission to Stand For
-                  Something Good in everything we do.
-                </div>
-                <div className=" w-1/2">
-                  <img
-                    src="https://shakeshack.com/sites/default/files/styles/locations/public/feeds/images/Array--MSP.jpg?itok=6vsU3Pan"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="pt-64 mb-4 ">
+        <div className="mt-8 mb-8 ">
           <div className="w-3/4 mx-auto">
             <h1 className="text-2xl font-bold text-green-600 uppercase text-center mb-4">
               Current Promotions
@@ -395,7 +331,7 @@ const Location: Template<TemplateRenderProps> = ({
                   <p className="mt-4 mb-4">
                     Crisp sips for fall in real fruit flavors: Yuzu Orange
                     Cider, Harvest Berry Lemonade, and Concord Grape Punch.
-                  </p> 
+                  </p>
                   <Cta
                     buttonText="Order now"
                     style="primary-cta "
@@ -406,6 +342,71 @@ const Location: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
+        <div
+          className="w-3/4 mx-auto flex p-4 justify-evenly"
+          style={{ background: "#e7efdf" }}
+        >
+          <div className="my-auto w-1/2 ">
+            <h1 className="text-2xl font-bold text-green-600 uppercase ">
+              NEVER WAIT IN LINE AGAIN
+            </h1>
+            <div className="mt-4 text-xl">
+              Only on the Shack App: exclusive offers + treats, contactless
+              payment, curbside pick-up, delivery + way more.
+            </div>
+            <div className="flex w-3/4 mx-auto mt-8 gap-4">
+              <img
+                src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png"
+                alt=""
+              />
+              <img
+                src="https://lh3.googleusercontent.com/q1k2l5CwMV31JdDXcpN4Ey7O43PxnjAuZBTmcHEwQxVuv_2wCE2gAAQMWxwNUC2FYEOnYgFPOpw6kmHJWuEGeIBLTj9CuxcOEeU8UXyzWJq4NJM3lg=s0"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://shakeshack.com/sites/default/files/Shake-Shake_App_540.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="mb-16 pb-64">
+          <div className="pt-5 relative">
+            {geocodedCoordinate && (
+              <StaticMap
+                latitude={geocodedCoordinate.latitude}
+                longitude={geocodedCoordinate.longitude}
+              ></StaticMap>
+            )}
+            <div className="w-4/6 mx-auto text-center mt-10 p-10 absolute top-full left-1/2 -translate-x-2/4 -translate-y-2/4 bg-white">
+              <div className="text-2xl font-bold text-green-600">About us</div>
+              <div className="flex gap-4 mt-8">
+                <div className="mt-4 text-left text-gray-500 leading-8 w-1/2">
+                  When Shake Shack started as a hot dog cart in New York City's
+                  Madison Square Park, our mission was simple: raise funds for a
+                  public art project. As we grew into a global business, our
+                  mission to Stand For Something Good expanded to include taking
+                  care of our team, sourcing premium ingredients from partners
+                  with the same dedication to quality, designing our Shacks
+                  responsibly, supporting our communities through donations,
+                  events, and volunteering—and much more. Doing good is in our
+                  roots, a part of our DNA since day one. 20 years later, we're
+                  still continuing to expand and evolve our mission to Stand For
+                  Something Good in everything we do.
+                </div>
+                <div className=" w-1/2">
+                  <img
+                    src="https://shakeshack.com/sites/default/files/styles/locations/public/feeds/images/Array--MSP.jpg?itok=6vsU3Pan"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <Footer />
       </SearchHeadlessProvider>
     </>

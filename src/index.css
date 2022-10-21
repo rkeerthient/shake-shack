@@ -99,3 +99,12 @@ svg {
 .div1.show {
   transition: all 0.2s ease-in-out;
 }
+
+.services li:last-child::after {
+  content: "";
+}
+.services li::after {
+  content: "|";
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
