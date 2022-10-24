@@ -237,32 +237,6 @@ const Location: Template<TemplateRenderProps> = ({
           </h1>
           {c_featuredMenu && <Carousel data={c_featuredMenu}></Carousel>}
         </div>
-        <div className="w-full bg-gray-200">
-          <div className="p-4 w-2/4 mx-auto text-center mb-10 ">
-            <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
-              FAQs
-            </h1>
-            <div className="bg-grey-100 mt-10">
-              {c_relatedFAQs && (
-                <Accordion allowZeroExpanded>
-                  {c_relatedFAQs.map((item: any, index: number) => (
-                    <AccordionItem
-                      key={index}
-                      className="faqAccordion my-4 py-4 border-b  border-black text-left"
-                    >
-                      <AccordionItemHeading>
-                        <AccordionItemButton>
-                          <span className="font-bold">{item.question}</span>
-                        </AccordionItemButton>
-                      </AccordionItemHeading>
-                      <AccordionItemPanel>{item.answer}</AccordionItemPanel>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              )}
-            </div>
-          </div>
-        </div>
         <div className="mt-8 mb-8 ">
           <div className="w-3/4 mx-auto">
             <h1 className="text-2xl font-bold text-green-600 uppercase text-center mb-4">
@@ -342,6 +316,32 @@ const Location: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
+        <div className="w-full bg-gray-200">
+          <div className="p-4 w-2/4 mx-auto text-center mb-10 ">
+            <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
+              FAQs
+            </h1>
+            <div className="bg-grey-100 mt-10">
+              {c_relatedFAQs && (
+                <Accordion allowZeroExpanded>
+                  {c_relatedFAQs.map((item: any, index: number) => (
+                    <AccordionItem
+                      key={index}
+                      className="faqAccordion my-4 py-4 border-b  border-black text-left"
+                    >
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                          <span className="font-bold">{item.question}</span>
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>{item.answer}</AccordionItemPanel>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              )}
+            </div>
+          </div>
+        </div>
         <div
           className="w-3/4 mx-auto flex p-4 justify-evenly"
           style={{ background: "#e7efdf" }}
@@ -406,7 +406,6 @@ const Location: Template<TemplateRenderProps> = ({
             </div>
           </div>
         </div>
-
         <Footer />
       </SearchHeadlessProvider>
     </>
