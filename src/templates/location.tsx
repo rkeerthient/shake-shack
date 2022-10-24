@@ -50,6 +50,7 @@ import {
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import searchConfig from "../config/searchConfig";
+import LocCarousel from "../components/LocCarousel";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -75,6 +76,10 @@ export const config: TemplateConfig = {
       "c_featuredMenu.description",
       "c_relatedFAQs.question",
       "c_relatedFAQs.answer",
+      "c_nearByLocations.name",
+      "c_nearByLocations.address",
+      "c_nearByLocations.hours",
+      "c_nearByLocations.mainPhone",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -163,6 +168,7 @@ const Location: Template<TemplateRenderProps> = ({
     geocodedCoordinate,
     c_featuredMenu,
     c_relatedFAQs,
+    c_nearByLocations,
   } = document;
 
   const [isActive, setIsActive] = useState(false);
@@ -183,7 +189,11 @@ const Location: Template<TemplateRenderProps> = ({
             </h1>
             <div className="grid grid-cols-2 mx-auto ">
               <div className=" mx-auto">
-                <Contact address={address} phone={mainPhone}></Contact>
+                <Contact
+                  address={address}
+                  phone={mainPhone}
+                  showCTA={true}
+                ></Contact>
               </div>
               <div className="pt-5 mx-auto">
                 <div className="flex leading-loose items-center text-xl">
@@ -405,6 +415,14 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
             </div>
           </div>
+        </div>
+        <div className="mx-auto p-4 mb-4 mx-auto text-center">
+          <h1 className="text-2xl mb-4 font-bold text-green-600 uppercase">
+            Near by locations
+          </h1>
+          {c_nearByLocations && (
+            <LocCarousel data={c_nearByLocations} document={document} />
+          )}
         </div>
         <Footer />
       </SearchHeadlessProvider>
