@@ -23,12 +23,9 @@ import Banner from "../components/banner";
 import Contact from "../components/contact";
 import Cta from "../components/cta";
 import Hours from "../components/hours";
-import List from "../components/list";
-import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
 import "../index.css";
 import { FiClock, FiPhone } from "react-icons/fi";
-import parsePhoneNumber from "libphonenumber-js";
 import Carousel from "../components/Carousel";
 import {
   Accordion,
@@ -44,7 +41,6 @@ import "slick-carousel/slick/slick-theme.css";
 import HoursText from "../components/HoursText";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useState } from "react";
-import { SearchBar } from "@yext/search-ui-react";
 import {
   provideHeadless,
   SearchHeadlessProvider,
@@ -176,7 +172,7 @@ const Location: Template<TemplateRenderProps> = ({
     ...searchConfig,
     verticalKey: "restaurants",
   });
-  let services = ["Delivery Pickup", "Dine in"];
+  let services = ["Delivery", "Pickup", "Dine in"];
   return (
     <>
       <SearchHeadlessProvider searcher={searcher}>
@@ -250,7 +246,7 @@ const Location: Template<TemplateRenderProps> = ({
         <div className="mt-8 mb-8 ">
           <div className="w-3/4 mx-auto">
             <h1 className="text-2xl font-bold text-green-600 uppercase text-center mb-4">
-              Current Promotions
+              Limited Time Offers
             </h1>
             <div
               className="flex justify-evenly gap-3"
@@ -391,7 +387,9 @@ const Location: Template<TemplateRenderProps> = ({
               ></StaticMap>
             )}
             <div className="w-4/6 mx-auto text-center mt-10 p-10 absolute top-full left-1/2 -translate-x-2/4 -translate-y-2/4 bg-white">
-              <div className="text-2xl font-bold text-green-600">About us</div>
+              <div className="text-2xl font-bold uppercase text-green-600">
+                About Shake shack
+              </div>
               <div className="flex gap-4 mt-8">
                 <div className="mt-4 text-left text-gray-500 leading-8 w-1/2">
                   When Shake Shack started as a hot dog cart in New York City's
