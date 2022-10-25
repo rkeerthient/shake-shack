@@ -47,6 +47,7 @@ import {
 } from "@yext/search-headless-react";
 import searchConfig from "../config/searchConfig";
 import LocCarousel from "../components/LocCarousel";
+import { useEffect } from "react";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -173,9 +174,11 @@ const Location: Template<TemplateRenderProps> = ({
     verticalKey: "restaurants",
   });
   let services = ["Delivery", "Pickup", "Dine in"];
+
   return (
     <>
       <SearchHeadlessProvider searcher={searcher}>
+       
         <Header />
         <Banner name={name} address={address} openTime={openTime}></Banner>
         <div className="centered-container">

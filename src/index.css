@@ -91,15 +91,7 @@
   right: 7% !important;
   z-index: 1;
 }
-/* 
-svg {
-  stroke: #4a8459;
-} */
-
-.div1.show {
-  transition: all 0.2s ease-in-out;
-}
-
+ 
 .services li:last-child::after {
   content: "";
 }
@@ -109,8 +101,10 @@ svg {
   margin-left: 0.5em;
 }
 
-
-
- .addrGrid {
+.addrGrid {
   text-align: left !important;
+}
+
+input.demo:focus::placeholder {
+  color: transparent;
 }
