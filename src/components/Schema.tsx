@@ -11,19 +11,19 @@ const Schema = (props: any) => {
     ? document.photoGallery[0].image.url
     : null;
   const paymentAccepted = document.paymentOptions;
-  const featuredMenu = document.c_featuredMenu;
-  console.log(featuredMenu);
   var offers = [];
-  featuredMenu.forEach((item) => {
-    offers.push({
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "MenuItem",
-        "name": `${item.name}`,
-        "description": `${item.description}`
-      }
-    })
-  });
+  if (document.c_featuredMenu) {
+    document.c_featuredMenu.forEach((item) => {
+      offers.push({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MenuItem",
+          "name": `${item.name}`,
+          "description": `${item.description}`
+        }
+      })
+    });
+  }
 
   return (
     <>
