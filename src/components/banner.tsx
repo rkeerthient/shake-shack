@@ -34,7 +34,10 @@ const Banner = (props: Banner) => {
   return (
     <>
       <div className="hero">
-        <img src="https://i.imgur.com/RlOXZV3.png" />
+        <img
+          src="https://i.imgur.com/RlOXZV3.png"
+          className="max-w-full	w-full"
+        />
         <div className="uppercase p-4 md:p-10 w-auto absolute top-6	left-4 md:-translate-y-2/4 border md:left-28	md:top-1/2 text-white  opacity-80	color-white font-bold bg-black">
           <div className="text-xl md:text-4xl  ">{name?.split(",")[0]}</div>
           <div className="mt-2 md:text-xl">

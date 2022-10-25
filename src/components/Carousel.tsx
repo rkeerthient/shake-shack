@@ -47,7 +47,11 @@ const Carousel = (props: any) => {
         data.map((item: any, index: any) => (
           <div key={index} className="p-4">
             <div>
-              <img src={item.c_photo.url} alt="" />
+              <img
+                src={item.c_photo.url}
+                alt=""
+                className="max-w-full	w-full"
+              />
             </div>
             <div className="textClass flex justify-between leading-6 font-normal">
               <div className="w-3/4 text-left ml-1">

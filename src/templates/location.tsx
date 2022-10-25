@@ -360,10 +360,12 @@ const Location: Template<TemplateRenderProps> = ({
             <img
               src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png"
               alt=""
+              className="max-w-full	w-full"
             />
             <img
               src="https://lh3.googleusercontent.com/q1k2l5CwMV31JdDXcpN4Ey7O43PxnjAuZBTmcHEwQxVuv_2wCE2gAAQMWxwNUC2FYEOnYgFPOpw6kmHJWuEGeIBLTj9CuxcOEeU8UXyzWJq4NJM3lg=s0"
               alt=""
+              className="max-w-full	w-full"
             />
           </div>
         </div>
