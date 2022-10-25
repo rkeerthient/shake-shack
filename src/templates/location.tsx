@@ -380,6 +380,7 @@ const Location: Template<TemplateRenderProps> = ({
         <div>
           <img
             loading="lazy"
+            className="max-w-full	w-full"
             src="https://shakeshack.com/sites/default/files/Shake-Shake_App_540.jpg"
             alt=""
           />
