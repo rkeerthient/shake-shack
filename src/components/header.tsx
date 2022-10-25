@@ -183,19 +183,17 @@ const Header = () => {
         "_blank"
       );
   };
-  const [isActive, setIsActive] = useState(false);
   return (
     <>
       <div className="w-full">
         <nav className="relative">
           <img src="https://i.imgur.com/cJtnz2b.png"></img>
-          {!isActive && (
+          {
             <BsSearch
               className="absolute bottom-2/4 "
               style={{ right: "5%" }}
-              onClick={(e) => setIsActive(!isActive)}
             />
-          )}
+          }
 
           {
             <div className="div1 show">
