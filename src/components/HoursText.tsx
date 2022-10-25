@@ -58,13 +58,10 @@ const HoursText = ({ document }: any) => {
         newTime.split(":")[1]
       }`;
 
-    console.log(newTime);
-
     newTime =
       newTime.split(":")[0] >= 12 && newTime.split(":")[0] <= 23
         ? `${newTime.split(":")[0] - 12}:${newTime.split(":")[1]} PM`
         : `${newTime.split(":")[0] - 12}:${newTime.split(":")[1]} AM`;
-    console.log(newTime);
 
     return newTime;
   };

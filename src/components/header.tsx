@@ -128,10 +128,12 @@ const Header = () => {
         <div className="w-full">
           <nav className="">
             <img
+              loading="lazy"
               src="https://i.imgur.com/pDK1zJg.png"
               className="hidden md:block"
             ></img>
             <img
+              loading="lazy"
               src="https://i.imgur.com/wMLbcJg.png"
               className="block md:hidden"
             ></img>

@@ -177,7 +177,6 @@ const Location: Template<TemplateRenderProps> = ({
     c_nearByLocations,
     c_bannerImg,
   } = document;
-  console.log(JSON.stringify(c_featuredMenu));
   const [isActive, setIsActive] = useState(false);
 
   let services = ["Delivery", "Pickup", "Dine in"];
@@ -365,11 +364,13 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
           <div className="flex w-3/4 mx-auto mt-4 md:mt-8 gap-1 md:gap-4 justify-center md:justify-none">
             <img
+              loading="lazy"
               src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png"
               alt=""
               className="max-w-full	w-full"
             />
             <img
+              loading="lazy"
               src="https://lh3.googleusercontent.com/q1k2l5CwMV31JdDXcpN4Ey7O43PxnjAuZBTmcHEwQxVuv_2wCE2gAAQMWxwNUC2FYEOnYgFPOpw6kmHJWuEGeIBLTj9CuxcOEeU8UXyzWJq4NJM3lg=s0"
               alt=""
               className="max-w-full	w-full"
@@ -378,6 +379,7 @@ const Location: Template<TemplateRenderProps> = ({
         </div>
         <div>
           <img
+            loading="lazy"
             src="https://shakeshack.com/sites/default/files/Shake-Shake_App_540.jpg"
             alt=""
           />
