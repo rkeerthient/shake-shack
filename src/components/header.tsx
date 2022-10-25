@@ -148,6 +148,11 @@ import Cta from "../components/cta";
 import { BsSearch } from "react-icons/bs";
 import { SearchBar } from "@yext/search-ui-react";
 import { useState } from "react";
+import {
+  provideHeadless,
+  SearchHeadlessProvider,
+} from "@yext/search-headless-react";
+import searchConfig from "../config/searchConfig";
 type Link = {
   label: string;
   url: string;
@@ -172,6 +177,10 @@ const Header = () => {
       </a>
     </div>
   ));
+  const searcher = provideHeadless({
+    ...searchConfig,
+    verticalKey: "restaurants",
+  });
   const onSearch = (searchEventData: {
     verticalKey?: string;
     query?: string;
@@ -186,17 +195,17 @@ const Header = () => {
   const [isActive, setIsActive] = useState(true);
   return (
     <>
-      <div className="w-full">
-        <nav className="relative">
-          <img src="https://i.imgur.com/cJtnz2b.png"></img>
+      <SearchHeadlessProvider searcher={searcher}>
+        <div className="w-full">
+          <nav className="relative">
+            <img src="https://i.imgur.com/cJtnz2b.png"></img>
 
-          <BsSearch
-            className="absolute bottom-2/4 "
-            style={{ right: "5%" }}
-            onClick={(e) => setIsActive(!isActive)}
-          />
+            <BsSearch
+              className="absolute bottom-2/4 "
+              style={{ right: "5%" }}
+              onClick={(e) => setIsActive(!isActive)}
+            />
 
-          {/* {isActive && (
             <div className="div1 show">
               <SearchBar
                 onSearch={onSearch}
@@ -208,9 +217,9 @@ const Header = () => {
                 hideRecentSearches={true}
               />
             </div>
-          )} */}
-        </nav>
-      </div>
+          </nav>
+        </div>
+      </SearchHeadlessProvider>
     </>
   );
 };
