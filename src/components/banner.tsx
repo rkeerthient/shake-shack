@@ -35,12 +35,12 @@ const Banner = (props: Banner) => {
     <>
       <div className="hero">
         <img src="https://i.imgur.com/RlOXZV3.png" />
-        <div className="uppercase p-10 w-auto absolute -translate-y-2/4 border left-28	top-1/2 text-white   opacity-80	color-white font-bold bg-black">
-          <div className="text-4xl  ">{name?.split(",")[0]}</div>
-          <div className="mt-2	text-xl	">
+        <div className="uppercase p-4 md:p-10 w-auto absolute top-6	left-4 md:-translate-y-2/4 border md:left-28	md:top-1/2 text-white  opacity-80	color-white font-bold bg-black">
+          <div className="text-xl md:text-4xl  ">{name?.split(",")[0]}</div>
+          <div className="mt-2 md:text-xl">
             {address?.city}, {address?.region}
           </div>
-          <div className="mt-10   flex justify-between">
+          <div className="mt-4 md:mt-10 gap-1 flex justify-between">
             <Cta
               buttonText="Get Directions"
               url="http://google.com"

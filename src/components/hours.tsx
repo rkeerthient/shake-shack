@@ -141,7 +141,7 @@ const Hours = (props: Hours) => {
 
   return (
     <>
-      <div className="text-xl font-semibold mb-4">{title}</div>
+      <div className="text-base md:text-xl font-semibold mb-4">{title}</div>
       <table className="ml-16">
         <thead className="sr-only">
           <tr>

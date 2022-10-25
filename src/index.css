@@ -91,7 +91,7 @@
   right: 7% !important;
   z-index: 1;
 }
- 
+
 .services li:last-child::after {
   content: "";
 }
@@ -107,4 +107,14 @@
 
 input.demo:focus::placeholder {
   color: transparent;
+}
+@media only screen and (max-width: 768px) {
+  .slick-prev {
+    left: 0% !important;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 2% !important;
+    z-index: 1;
+  }
 }

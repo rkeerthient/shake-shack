@@ -13,7 +13,8 @@ const Cta = (props: Cta) => {
     <a
       href={url}
       className={
-        `${style}` + " py-4 px-6 text-base font-bold text-white rounded-lg"
+        `${style}` +
+        " border py-2 px-3 md:py-4 md:px-6 text-sm md:text-base font-bold text-white rounded-full"
       }
       target="_blank"
       rel="noopener noreferrer"

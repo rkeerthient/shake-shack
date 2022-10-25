@@ -127,7 +127,14 @@ const Header = () => {
       <SearchHeadlessProvider searcher={searcher}>
         <div className="w-full">
           <nav className="">
-            <img src="https://i.imgur.com/pDK1zJg.png"></img>
+            <img
+              src="https://i.imgur.com/pDK1zJg.png"
+              className="hidden md:block"
+            ></img>
+            <img
+              src="https://i.imgur.com/wMLbcJg.png"
+              className="block md:hidden"
+            ></img>
           </nav>
         </div>
 
@@ -135,7 +142,8 @@ const Header = () => {
           <SearchBar
             onSearch={onSearch}
             customCssClasses={{
-              searchBarContainer: "w-3/6 mt-4 mx-auto mb-auto ",
+              searchBarContainer:
+                "w-full px-4 md:px-0 md:w-3/6 mt-4 mx-auto mb-auto ",
               inputElement: "demo ",
             }}
             hideRecentSearches={true}

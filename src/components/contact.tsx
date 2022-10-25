@@ -17,10 +17,10 @@ const Contact = (props: any) => {
         </div>
         {showCTA && (
           <>
-            <div className="mt-10 text-xl uppercase text-green-600 underline">
+            <div className="mt-4 text-xl uppercase text-green-600  hover:cursor-pointer hover:underline underline-offset-8">
               <a>Get Directions</a>
             </div>
-            <div className="w-30 mt-10">
+            <div className="w-30 mt-4 md:mt-10">
               <Cta
                 buttonText="Order Online"
                 url="#"

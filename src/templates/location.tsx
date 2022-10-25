@@ -175,16 +175,16 @@ const Location: Template<TemplateRenderProps> = ({
           <h1 className="text-2xl mb-4 font-bold text-green-600 uppercase text-center">
             Shake Shack
           </h1>
-          <div className="grid grid-cols-2 mx-auto ">
-            <div className=" mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 mx-auto">
+            <div className="text-center md:text-left mx-auto">
               <Contact
                 address={address}
                 phone={mainPhone}
                 showCTA={true}
               ></Contact>
             </div>
-            <div className="pt-5 mx-auto">
-              <div className="flex leading-loose items-center text-xl">
+            <div className="pt-5 mt-4 md:mt-0 mx-auto">
+              <div className="flex justify-center md:justify-start leading-loose items-center text-base md:text-xl">
                 <FiPhone />
                 {mainPhone && (
                   <span className="ml-2">
@@ -195,7 +195,7 @@ const Location: Template<TemplateRenderProps> = ({
                   </span>
                 )}
               </div>
-              <div className="flex mt-4 text-xl">
+              <div className="flex mt-4 text-base md:text-xl justify-center md:justify-left">
                 <span className="font-bold ">Services:</span>
                 <ul className=" ml-2 flex services">
                   {services.map((item) => (
@@ -205,7 +205,7 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
 
               {hours && (
-                <div className="flex w-full leading-loose items-baseline text-xl">
+                <div className="flex w-full leading-loose items-baseline text-base md:text-xl">
                   <FiClock />
                   <span className="ml-2">
                     <HoursText document={document} />
@@ -235,17 +235,17 @@ const Location: Template<TemplateRenderProps> = ({
         </h1>
         {c_featuredMenu && <Carousel data={c_featuredMenu}></Carousel>}
       </div>
-      <div className="mt-8 mb-8 ">
-        <div className="w-3/4 mx-auto">
+      <div className="my-8 mb-20 md:mb-8 mx-4">
+        <div className="w-full  md:w-3/4 mx-auto">
           <h1 className="text-2xl font-bold text-green-600 uppercase text-center mb-4">
             Limited Time Offers
           </h1>
           <div
-            className="flex justify-evenly gap-3"
+            className="flex flex-col md:flex-row w-full justify-evenly gap-1 md:gap-3"
             style={{ height: "300px" }}
           >
             <div
-              className="w-1/2"
+              className="w-full md:w-1/2"
               style={{
                 backgroundImage:
                   "url(https://dynl.mktgcdn.com/p-sandbox/Im0R8nBqJXfb055PICK7vLWl7XLxnbX7d_slh1DnseI/200x1.jpg)",
@@ -253,9 +253,8 @@ const Location: Template<TemplateRenderProps> = ({
               }}
             >
               <div
-                className="w-2/3 h-2/3 border my-auto"
+                className="w-2/3 h-2/3 border my-auto p-4"
                 style={{
-                  padding: "1em",
                   marginTop: "5%",
                   marginLeft: "5%",
                   background: "black",
@@ -263,10 +262,10 @@ const Location: Template<TemplateRenderProps> = ({
                   color: "white",
                 }}
               >
-                <h1 className="text-xl font-bold">
+                <h1 className="text-base md:text-xl font-bold">
                   GRAB ONE SHAKE, GET ONE FREE
                 </h1>
-                <p className="mt-4 mb-4">
+                <p className="pb-4  md:my-4">
                   From 8PM-close, score a second shake for free when you order
                   for pick-up online or on our app with code: SHAKENIGHT til
                   11/30.
@@ -275,7 +274,7 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
             </div>
             <div
-              className="w-1/2"
+              className="w-full md:w-1/2"
               style={{
                 backgroundImage:
                   "url(https://shakeshack.com/sites/default/files/styles/hero_desktop_wide/public/2022-09/2022-Q3_Drinks_Web-Homepage-Banner_2880x1040.jpg?h=b74d7a05&itok=6oVoFOBt)",
@@ -283,9 +282,8 @@ const Location: Template<TemplateRenderProps> = ({
               }}
             >
               <div
-                className="w-2/3 h-2/3 border my-auto"
+                className="w-2/3 h-2/3 border my-auto p-4"
                 style={{
-                  padding: "1em",
                   marginTop: "5%",
                   marginLeft: "5%",
                   background: "black",
@@ -293,10 +291,10 @@ const Location: Template<TemplateRenderProps> = ({
                   color: "white",
                 }}
               >
-                <h1 className="text-xl font-bold">
+                <h1 className="text-base md:text-xl font-bold">
                   FRESHLY PICKED FALL FLAVORS
                 </h1>
-                <p className="mt-4 mb-4">
+                <p className="pb-4 md:my-4">
                   Crisp sips for fall in real fruit flavors: Yuzu Orange Cider,
                   Harvest Berry Lemonade, and Concord Grape Punch.
                 </p>
@@ -306,8 +304,8 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
         </div>
       </div>
-      <div className="w-full bg-gray-200">
-        <div className="p-4 w-2/4 mx-auto text-center mb-10 ">
+      <div className="w-full md:w-2/2 bg-gray-200 mt-4">
+        <div className="p-4 w-full md:w-2/4 mx-auto text-center mb-10 ">
           <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
             FAQs
           </h1>
@@ -333,18 +331,18 @@ const Location: Template<TemplateRenderProps> = ({
         </div>
       </div>
       <div
-        className="w-3/4 mx-auto flex p-4 justify-evenly"
+        className="w-3/4 mx-auto flex p-4 justify-evenly flex-col gap-4 md:gap-0 md:flex-row"
         style={{ background: "#e7efdf" }}
       >
-        <div className="my-auto w-1/2 ">
+        <div className="my-auto w-full md:w-1/2 ">
           <h1 className="text-2xl font-bold text-green-600 uppercase ">
             NEVER WAIT IN LINE AGAIN
           </h1>
-          <div className="mt-4 text-xl">
+          <div className="mt-4 text-base md:text-xl">
             Only on the Shack App: exclusive offers + treats, contactless
             payment, curbside pick-up, delivery + way more.
           </div>
-          <div className="flex w-3/4 mx-auto mt-8 gap-4">
+          <div className="flex w-3/4 mx-auto mt-4 md:mt-8 gap-1 md:gap-4 justify-center md:justify-none">
             <img
               src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png"
               alt=""
@@ -362,7 +360,7 @@ const Location: Template<TemplateRenderProps> = ({
           />
         </div>
       </div>
-      <div className="mb-16 pb-64">
+      <div className="mb-16 pb-64 hidden md:block">
         <div className="pt-5 relative">
           {geocodedCoordinate && (
             <StaticMap
