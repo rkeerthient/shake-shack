@@ -183,7 +183,7 @@ const Header = () => {
         "_blank"
       );
   };
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   return (
     <>
       <div className="w-full">
