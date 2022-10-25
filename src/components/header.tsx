@@ -61,7 +61,7 @@ const Header = () => {
         deletingEffect();
         return false;
       }
-      timer = setTimeout(loopTyping, 100);
+      timer = setTimeout(loopTyping, 65);
     };
     loopTyping();
   }
@@ -82,7 +82,7 @@ const Header = () => {
         typingEffect();
         return false;
       }
-      timer = setTimeout(loopDeleting, 100);
+      timer = setTimeout(loopDeleting, 65);
     };
     loopDeleting();
   }
@@ -130,18 +130,17 @@ const Header = () => {
             <img src="https://i.imgur.com/pDK1zJg.png"></img>
           </nav>
         </div>
-        {queryPrompts && (
-          <div className="w-full">
-            <SearchBar
-              onSearch={onSearch}
-              customCssClasses={{
-                searchBarContainer: "w-3/6 mt-4 mx-auto mb-auto ",
-                inputElement: "demo ",
-              }}
-              hideRecentSearches={true}
-            />
-          </div>
-        )}
+
+        <div className="w-full">
+          <SearchBar
+            onSearch={onSearch}
+            customCssClasses={{
+              searchBarContainer: "w-3/6 mt-4 mx-auto mb-auto ",
+              inputElement: "demo ",
+            }}
+            hideRecentSearches={true}
+          />
+        </div>
       </SearchHeadlessProvider>
     </>
   );
