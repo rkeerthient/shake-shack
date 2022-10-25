@@ -62,6 +62,7 @@ export const config: TemplateConfig = {
       "description",
       "hours",
       "slug",
+      "c_bannerImg",
       "geocodedCoordinate",
       "services",
       "c_featuredMenu.name",
@@ -174,8 +175,9 @@ const Location: Template<TemplateRenderProps> = ({
     c_featuredMenu,
     c_relatedFAQs,
     c_nearByLocations,
+    c_bannerImg,
   } = document;
-
+  console.log(JSON.stringify(c_featuredMenu));
   const [isActive, setIsActive] = useState(false);
 
   let services = ["Delivery", "Pickup", "Dine in"];
@@ -183,7 +185,12 @@ const Location: Template<TemplateRenderProps> = ({
     <>
       <Schema document={cpy}></Schema>
       <Header />
-      <Banner name={name} address={address} openTime={openTime}></Banner>
+      <Banner
+        name={name}
+        address={address}
+        img={c_bannerImg}
+        openTime={openTime}
+      ></Banner>
       <div className="centered-container">
         <div className="section">
           <h1 className="text-2xl mb-4 font-bold text-green-600 uppercase text-center">

@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { Image } from "@yext/pages/components";
+
 import Cta from "./cta";
 import { Markdown } from "react-showdown";
 const Carousel = (props: any) => {
@@ -47,11 +49,12 @@ const Carousel = (props: any) => {
         data.map((item: any, index: any) => (
           <div key={index} className="p-4">
             <div>
-              <img
+              {/* <img
                 src={item.c_photo.url}
                 alt=""
                 className="max-w-full	w-full"
-              />
+              /> */}
+              <Image image={item.c_photo} className="max-w-full	w-full"></Image>
             </div>
             <div className="textClass flex justify-between leading-6 font-normal">
               <div className="w-3/4 text-left ml-1">

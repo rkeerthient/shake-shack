@@ -1,6 +1,6 @@
 import * as React from "react";
 import { JsonLd } from "react-schemaorg";
-import { SelfStorage } from "schema-dts";
+import { Restaurant } from "schema-dts";
 const Schema = (props: any) => {
   const { document } = props;
   const name = document.name;
@@ -13,10 +13,10 @@ const Schema = (props: any) => {
   const paymentAccepted = document.paymentOptions;
   return (
     <>
-      <JsonLd<SelfStorage>
+      <JsonLd<Restaurant>
         item={{
           "@context": "https://schema.org",
-          "@type": "SelfStorage",
+          "@type": "Restaurant",
           name,
           address: {
             "@type": "PostalAddress",
