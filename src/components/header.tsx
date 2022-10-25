@@ -196,7 +196,7 @@ const Header = () => {
             onClick={(e) => setIsActive(!isActive)}
           />
 
-          {isActive && (
+          {/* {isActive && (
             <div className="div1 show">
               <SearchBar
                 onSearch={onSearch}
@@ -208,7 +208,7 @@ const Header = () => {
                 hideRecentSearches={true}
               />
             </div>
-          )}
+          )} */}
         </nav>
       </div>
     </>
