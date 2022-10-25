@@ -172,7 +172,7 @@ const Location: Template<TemplateRenderProps> = ({
     ...searchConfig,
     verticalKey: "restaurants",
   });
-  let services = ["Delivery", "Pickup", "Dine in"];p
+  let services = ["Delivery", "Pickup", "Dine in"];
   return (
     <>
       <SearchHeadlessProvider searcher={searcher}>
