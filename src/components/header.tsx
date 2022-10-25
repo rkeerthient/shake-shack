@@ -183,19 +183,20 @@ const Header = () => {
         "_blank"
       );
   };
+  const [isActive, setIsActive] = useState(true);
   return (
     <>
       <div className="w-full">
         <nav className="relative">
           <img src="https://i.imgur.com/cJtnz2b.png"></img>
-          {
-            <BsSearch
-              className="absolute bottom-2/4 "
-              style={{ right: "5%" }}
-            />
-          }
 
-          {
+          <BsSearch
+            className="absolute bottom-2/4 "
+            style={{ right: "5%" }}
+            onClick={(e) => setIsActive(!isActive)}
+          />
+
+          {isActive && (
             <div className="div1 show">
               <SearchBar
                 onSearch={onSearch}
@@ -207,7 +208,7 @@ const Header = () => {
                 hideRecentSearches={true}
               />
             </div>
-          }
+          )}
         </nav>
       </div>
     </>
