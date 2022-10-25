@@ -82,7 +82,7 @@ const Header = () => {
         typingEffect();
         return false;
       }
-      timer = setTimeout(loopDeleting, 65);
+      timer = setTimeout(loopDeleting, 35);
     };
     loopDeleting();
   }
