@@ -125,7 +125,7 @@ const Header = () => {
           <img src="https://i.imgur.com/pDK1zJg.png"></img>
         </nav>
       </div>
-      {queryPrompts && (
+      {/* {queryPrompts && (
         <div className="w-full">
           <SearchBar
             onSearch={onSearch}
@@ -136,7 +136,15 @@ const Header = () => {
             hideRecentSearches={true}
           />
         </div>
-      )}
+      )} */}
+      <SearchBar
+        onSearch={onSearch}
+        customCssClasses={{
+          searchBarContainer: "w-3/6 mt-4 mx-auto mb-auto ",
+          inputElement: "demo ",
+        }}
+        hideRecentSearches={true}
+      />
     </>
   );
 };
