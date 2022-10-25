@@ -177,7 +177,7 @@ const Location: Template<TemplateRenderProps> = ({
     <>
       <SearchHeadlessProvider searcher={searcher}>
         <Header />
-        <Banner name={name} address={address} openTime={openTime}></Banner>
+        {/* <Banner name={name} address={address} openTime={openTime}></Banner> */}
         <div className="centered-container">
           <div className="section">
             <h1 className="text-2xl mb-4 font-bold text-green-600 uppercase text-center">
