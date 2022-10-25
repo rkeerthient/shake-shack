@@ -41,13 +41,7 @@ import "slick-carousel/slick/slick-theme.css";
 import HoursText from "../components/HoursText";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useState } from "react";
-import {
-  provideHeadless,
-  SearchHeadlessProvider,
-} from "@yext/search-headless-react";
-import searchConfig from "../config/searchConfig";
 import LocCarousel from "../components/LocCarousel";
-import { SearchBar } from "@yext/search-ui-react";
 
 /**
  * Required when Knowledge Graph data is used for a template.

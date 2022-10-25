@@ -1,13 +1,9 @@
 import * as React from "react";
-import Cta from "../components/cta";
-import { BsSearch } from "react-icons/bs";
 import { SearchBar } from "@yext/search-ui-react";
 import { useEffect, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
 import {
   provideHeadless,
   SearchHeadlessProvider,
-  useSearchActions,
 } from "@yext/search-headless-react";
 import searchConfig from "../config/searchConfig";
 
