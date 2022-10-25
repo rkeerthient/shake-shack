@@ -10,6 +10,7 @@ const StaticMap = (props: Coordinates) => {
 
   return (
     <img
+      loading="lazy"
       className="mapStyle w-full"
       src={
         "https://maps.googleapis.com/maps/api/staticmap?center=" +
